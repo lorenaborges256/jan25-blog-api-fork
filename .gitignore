@@ -137,3 +137,11 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# DS Store is specific to MacOS, don't need that junk in our repo!!
+.DS_STORE
+
+# Ignore this file to prevent OS-specific versions of dependencies being used 
+# on the wrong OS, AND
+# keep the chunky file out of the repo to keep the repo slim!
+package-lock.json 
