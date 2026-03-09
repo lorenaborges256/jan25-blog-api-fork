@@ -87,6 +87,7 @@ All properties of all entities are required!
 ### NPM Script Commands 
 
 - NPM script commands 
+- Project dependencies 
 - Seed & similar files 
 
 ### Database Setup 
