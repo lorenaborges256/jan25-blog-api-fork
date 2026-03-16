@@ -93,3 +93,12 @@ All properties of all entities are required!
 ### Database Setup 
 
 - MongoDB Atlas usage 
+
+
+### Features
+
+- User Authentication and Authorisation
+	- JWTs
+	- Middleware
+- Post CRUD 
+- User CRUD
