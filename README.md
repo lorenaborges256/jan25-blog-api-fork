@@ -99,6 +99,13 @@ All properties of all entities are required!
 
 - User Authentication and Authorisation
 	- JWTs
+		- Make generateJWT function
+		- Make verifyJWT function
+		- Make a login route for the user that makes a JWT 
+		- Make middleware that runs verifyJWT
 	- Middleware
+		- isUserAdmin middleware
+		- isUserLoggedIn middleware 
+		- verifyJwt middleware 
 - Post CRUD 
 - User CRUD

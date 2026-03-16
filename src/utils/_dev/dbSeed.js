@@ -4,7 +4,7 @@ const { dbConnect, dbDisconnect } = require("../databaseConnectionManager");
 
 
 async function dbSeed () {
-
+	console.log("dbSeed 01");
 	// User data
 	const usersToSeed = [
 		{
@@ -25,7 +25,7 @@ async function dbSeed () {
 		},
 	];
 
-
+	console.log("dbSeed user seeding");
 	// User seeding
 	for await (const userData of usersToSeed) {
 		await UserModel.create(userData);
@@ -58,6 +58,7 @@ async function dbSeed () {
 	];
 
 
+	console.log("dbSeed before post seeding");
 	// Post seeding
 
 	// We can use Post.insertMany to seed!
