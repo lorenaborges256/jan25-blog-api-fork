@@ -1,0 +1,23 @@
+info:
+  name: PATCH Specific User
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: http://localhost:3000/users/69b7c3513e74343e2e581efa
+  body:
+    type: json
+    data: |-
+      {
+        "username":"changedUser3"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWI3YzM1MTNlNzQzNDNlMmU1ODFlZmEiLCJpYXQiOjE3NzM4MjY5MDAsImV4cCI6MTc3NDQzMTcwMH0.iaa1nWKdEd2LIxYm9pVZc8x8Q-YQcZ3kPLYyJyNUG28
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

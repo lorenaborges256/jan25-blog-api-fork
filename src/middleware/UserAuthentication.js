@@ -1,4 +1,5 @@
 const { UserModel } = require("../models/UserModel");
+const { verifyJwt } = require("../utils/jwtUtils");
 
 
 async function checkForUserJwt (request, response, next) {
@@ -26,14 +27,16 @@ async function checkForUserJwt (request, response, next) {
 		console.log(decodedToken);
 
 		// Find the user and attach them to the request
-		let loggedInUser = await UserModel.findById(decodedToken.payload.userId);
+		let loggedInUser = await UserModel.findById(decodedToken.userId);
 
 		// Attach them to the request
 		request.customData.user = loggedInUser;
+		request.customData.id = loggedInUser.id;
 
 
 		next();
 	} catch (error) {
+		console.log(error);
 		response.status(403).json({
 			message:"You are not logged in!"
 		});

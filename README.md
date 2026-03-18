@@ -106,6 +106,12 @@ All properties of all entities are required!
 	- Middleware
 		- isUserAdmin middleware
 		- isUserLoggedIn middleware 
-		- verifyJwt middleware 
+		- isUserTargetingThemselves middleware
+			- Used on patch/delete/get routes to ensure a user is modifying their own data, not someone else's
+		- extendUserJwt middleware
+			- Optional stretch goal
+			- Process a valid user JWT
+			- Generate a new JWT for the user with a fresh expiry date
+			- Return the new JWT to the user 
 - Post CRUD 
 - User CRUD

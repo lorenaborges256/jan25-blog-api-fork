@@ -18,6 +18,25 @@ async function checkIfUserIsAdmin(request, response, next){
 	}
 }
 
+async function checkIfUserIsTargetingThemselves (request, response, next){
+	// Compare the request.customData.user.id to request.params.userId 
+	// We can assume that checkForUserJwt has run already and placed a user
+	// on to request.customData.user 
+	// We can also assume that this middleware be will used only routes with
+	// request.params.userId (e.g. localhost:3000/users/asovajhdalkjv)
+	// So this logic should be simple!!
+
+	if (request.customData.user.id == request.params.userId){
+		// The user is doing things about their own data
+		next();
+	} else {
+		return response.status(403).json({
+			message:"Cannot edit other users."
+		});
+	}
+}
+
 module.exports = {
-	checkIfUserIsAdmin
+	checkIfUserIsAdmin,
+	checkIfUserIsTargetingThemselves
 }
