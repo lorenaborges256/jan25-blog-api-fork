@@ -3,7 +3,15 @@ const {app} = require("./server.js");
 
 // Load up environment variables 
 const {loadEnvFile} = require("node:process");
-loadEnvFile();
+try {
+	loadEnvFile();
+} catch (error) {
+	console.log("No .env file detected!")
+	if (process.env.NODE_ENV == "production"){
+		console.log("No .env file - this is intentional!");
+	}
+}
+
 
 // Connect to the database 
 const { dbConnect } = require("./utils/databaseConnectionManager");
